@@ -3,6 +3,9 @@ A Remake / Celebration of the original 'Super Mario Bros.' games. Features new l
 
 <img width="3840" height="2160" alt="SMB1R_BANNER_printable" src="https://github.com/user-attachments/assets/ed0e97a8-614a-44e2-b69f-2654fca6196c" />
 
+<img width="1365" height="717" alt="image" src="https://github.com/user-attachments/assets/b4051b41-299d-47da-8b8c-94a810cd056b" />
+
+
 ### Art by [@krystalphantasm.bsky.social](https://bsky.app/profile/krystalphantasm.bsky.social/post/3lvgmgvjeks2f)
 
 ### Download: https://github.com/JHDev2006/Super-Mario-Bros.-Remastered-Public/releases
