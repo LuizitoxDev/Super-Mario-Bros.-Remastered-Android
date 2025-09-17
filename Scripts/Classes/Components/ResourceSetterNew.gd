@@ -256,11 +256,21 @@ func get_variation_json(json := {}) -> Dictionary:
 	return json
 
 func get_resource_pack_path(res_path := "", resource_pack := "") -> String:
-	var user_path := res_path.replace("res://Assets", "user://resource_packs/" + resource_pack)
-	user_path = user_path.replace("user://custom_characters/", "user://resource_packs/" + resource_pack + "/Sprites/Players/CustomCharacters/")
+	# Caminho base na pasta Documentos
+	var documents_dir := OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS)
+	var base_path := documents_dir + "/SuperMarioBros1/resource_packs/" + resource_pack
+	
+	# Substitui paths originais para usar documentos
+	var user_path := res_path.replace("res://Assets", base_path)
+	user_path = user_path.replace("user://custom_characters/", base_path + "/Sprites/Players/CustomCharacters/")
+	
+	# Verifica se existe o arquivo do recurso
 	if FileAccess.file_exists(user_path):
-		if FileAccess.file_exists("user://resource_packs/" + resource_pack + "/config.json"):
-			config_to_use = JSON.parse_string(FileAccess.open("user://resource_packs/" + resource_pack + "/config.json", FileAccess.READ).get_as_text())
+		# Verifica se existe o config.json e carrega
+		var config_file_path := base_path + "/config.json"
+		if FileAccess.file_exists(config_file_path):
+			var config_text := FileAccess.open(config_file_path, FileAccess.READ).get_as_text()
+			config_to_use = JSON.parse_string(config_text)
 			if config_to_use == null:
 				Global.log_error("Error parsing Config File! (" + resource_pack + ")")
 				config_to_use = {}

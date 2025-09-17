@@ -17,58 +17,107 @@
 
 [node name="TouchControlsHUD" type="CanvasLayer"]
 
-[node name="Up" type="TouchScreenButton" parent="."]
+[node name="HUD" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+
+[node name="LeftControl" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 5.0
+offset_top = -107.0
+offset_right = 93.0
+offset_bottom = -5.0
+grow_vertical = 0
+
+[node name="Up" type="TouchScreenButton" parent="HUD/LeftControl"]
 modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(37, 153)
-scale = Vector2(2, 2)
+position = Vector2(27.000004, 0)
+scale = Vector2(3, 3)
 texture_normal = ExtResource("1_f00da")
 action = "ui_up"
 script = ExtResource("2_3sjf1")
 
-[node name="Left" type="TouchScreenButton" parent="."]
+[node name="Right" type="TouchScreenButton" parent="HUD/LeftControl"]
 modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(19, 175)
-scale = Vector2(2, 2)
-texture_normal = ExtResource("2_vejms")
-action = "ui_left"
-script = ExtResource("4_hnfr1")
-
-[node name="Right" type="TouchScreenButton" parent="."]
-modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(55, 175)
-scale = Vector2(2, 2)
+position = Vector2(54, 33)
+scale = Vector2(3, 3)
 texture_normal = ExtResource("3_1f4gv")
 action = "ui_right"
 script = ExtResource("6_g3fwr")
 
-[node name="Down" type="TouchScreenButton" parent="."]
+[node name="Left" type="TouchScreenButton" parent="HUD/LeftControl"]
 modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(37, 197)
-scale = Vector2(2, 2)
+position = Vector2(0, 33)
+scale = Vector2(3, 3)
+texture_normal = ExtResource("2_vejms")
+action = "ui_left"
+script = ExtResource("4_hnfr1")
+
+[node name="Down" type="TouchScreenButton" parent="HUD/LeftControl"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(27, 66)
+scale = Vector2(3, 3)
 texture_normal = ExtResource("4_pnf37")
 action = "ui_down"
 script = ExtResource("6_rgfgi")
 
-[node name="Z" type="TouchScreenButton" parent="."]
-modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(437, 171)
-scale = Vector2(2, 2)
-texture_normal = ExtResource("5_1ym06")
-action = "ui_accept"
-script = ExtResource("10_etwrm")
+[node name="Center" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -23.5
+offset_top = -22.0
+offset_right = 23.5
+grow_horizontal = 2
+grow_vertical = 0
 
-[node name="X" type="TouchScreenButton" parent="."]
+[node name="Escape" type="TouchScreenButton" parent="HUD/Center"]
 modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(457, 191)
-scale = Vector2(2, 2)
-texture_normal = ExtResource("6_ep3g7")
-action = "ui_back"
-script = ExtResource("12_8df1n")
-
-[node name="Escape" type="TouchScreenButton" parent="."]
-modulate = Color(1, 1, 1, 0.392157)
-position = Vector2(240, 202)
+position = Vector2(-0.4999996, -5)
 scale = Vector2(1.0681816, 0.9999999)
 texture_normal = ExtResource("7_f00da")
 action = "ui_cancel"
 script = ExtResource("14_lrmp4")
+
+[node name="RightControl" type="Control" parent="HUD"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -93.0
+offset_top = -97.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Z" type="TouchScreenButton" parent="HUD/RightControl"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(0, 0.02229309)
+rotation = -0.00050668325
+scale = Vector2(4, 4)
+texture_normal = ExtResource("5_1ym06")
+action = "ui_accept"
+script = ExtResource("10_etwrm")
+
+[node name="X" type="TouchScreenButton" parent="HUD/RightControl"]
+modulate = Color(1, 1, 1, 0.392157)
+position = Vector2(44, 44)
+rotation = -0.00050668325
+scale = Vector2(4, 4)
+texture_normal = ExtResource("6_ep3g7")
+action = "ui_back"
+script = ExtResource("12_8df1n")

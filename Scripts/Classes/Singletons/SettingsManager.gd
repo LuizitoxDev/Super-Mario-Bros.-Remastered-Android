@@ -77,7 +77,8 @@ var file := {
 	}
 }
 
-const SETTINGS_DIR := "user://settings.cfg"
+var SETTINGS_DIR := OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/SuperMarioBros1/settings.cfg"
+
 
 func _enter_tree() -> void:
 	DirAccess.make_dir_absolute("user://resource_packs")
@@ -110,7 +111,4 @@ func apply_settings() -> void:
 	for i in file.audio.keys():
 		$Apply/Audio.set_value(i, file.audio[i])
 	if Settings.file.game.has("characters"):
-		var idx := 0
-		for i in Settings.file.game.characters:
-			Global.player_characters[idx] = int(i)
-			idx += 1
+		Global.player_characters = Settings.file.game.characters

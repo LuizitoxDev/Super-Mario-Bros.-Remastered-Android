@@ -1,7 +1,7 @@
 extends TouchScreenButton
 
 # Todas as actions que esse botão deve ativar
-@export var up_actions: Array[String] = ["ui_cancel", "pause", "ui_back"]
+@export var up_actions: Array[String] = ["pause", "ui_accept"]
 
 func _ready() -> void:
 	pressed.connect(_on_pressed)

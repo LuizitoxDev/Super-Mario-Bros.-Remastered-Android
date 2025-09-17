@@ -47,6 +47,8 @@ gdscript/warnings/narrowing_conversion=0
 
 window/size/viewport_width=256
 window/size/viewport_height=240
+window/size/window_width_override=1024
+window/size/window_height_override=960
 window/stretch/mode="viewport"
 
 [dotnet]
@@ -493,6 +495,10 @@ pick_tile={
 ]
 }
 
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
 [internationalization]
 
 locale/translation_remaps={
@@ -522,8 +528,9 @@ common/physics_interpolation=true
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0
-renderer/rendering_method="gl_compatibility"
-renderer/rendering_method.mobile="gl_compatibility"
+renderer/rendering_method="mobile"
+textures/vram_compression/import_s3tc_bptc=true
+textures/vram_compression/import_etc2_astc=true
 textures/default_filters/anisotropic_filtering_level=0
 textures/decals/filter=0
 textures/light_projectors/filter=0

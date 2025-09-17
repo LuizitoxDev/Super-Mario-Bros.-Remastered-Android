@@ -28,11 +28,11 @@ const lang_codes := ["en", "fr", "es", "de", "it", "pt", "pl", "tr", "ru", "jp",
 
 var rom_path := ""
 var rom_assets_exist := false
-const ROM_POINTER_PATH := "user://rom_pointer.smb"
-const ROM_PATH := "user://baserom.nes"
-const ROM_ASSETS_PATH := "user://resource_packs/BaseAssets"
-const ROM_PACK_NAME := "BaseAssets"
-const ROM_ASSETS_VERSION := 0
+var ROM_POINTER_PATH := OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/SuperMarioBros1/rom_pointer.smb"
+var ROM_PATH := OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/SuperMarioBros1/baserom.nes"
+var ROM_ASSETS_PATH := OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/SuperMarioBros1/resource_packs/BaseAssets"
+var ROM_PACK_NAME := "BaseAssets"
+var ROM_ASSETS_VERSION := 0
 
 var server_version := -1
 var current_version := -1

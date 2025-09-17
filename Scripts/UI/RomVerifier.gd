@@ -10,6 +10,17 @@ func _ready() -> void:
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	DisplayServer.window_set_flag(DisplayServer.WINDOW_FLAG_BORDERLESS, false)
 
+	# Verificação automática
+	var rom_path = OS.get_system_dir(OS.SYSTEM_DIR_DOCUMENTS) + "/SuperMarioBros1/baserom.nes"
+	if FileAccess.file_exists(rom_path):
+		if is_valid_rom(rom_path):
+			Global.rom_path = rom_path
+			verified()
+			copy_rom(rom_path)
+		else:
+			error()
+	else:
+		error()
 
 func on_file_dropped(files: PackedStringArray) -> void:
 	for i in files:
